@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+}
+
+h1, h2, h3 {
+  font-family: $font-heading;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
