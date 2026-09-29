@@ -9,6 +9,8 @@ export async function api(path, { method = 'GET', body, token } = {}) {
     },
     body: body && JSON.stringify(body),
   })
-  if (!res.ok) throw new Error(`Request failed: ${res.status}`)
-  return res.status === 204 ? null : res.json()
+  const data = res.status === 204 ? null : await res.json().catch(() => null)
+  // API'et sender en læsbar besked med ved fejl – send den videre
+  if (!res.ok) throw new Error(data?.message || `Request failed: ${res.status}`)
+  return data
 }

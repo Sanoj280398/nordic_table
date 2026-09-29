@@ -1,0 +1,82 @@
+@use '../../styles/variables' as *;
+
+$menu-line: #d9c59c;
+
+.menu {
+  background: $color-surface;
+
+  &__inner {
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 1.5rem $gutter 3rem;
+  }
+
+  &__category + &__category {
+    margin-top: 2.5rem;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $menu-line;
+
+    img {
+      width: 44px;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 1.25rem 0 0.75rem;
+    border-bottom: 1px solid $menu-line;
+
+    h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  &__desc,
+  &__price {
+    margin: 0;
+    font-family: $font-heading;
+    font-size: 0.8125rem;
+    color: $color-muted;
+  }
+
+  &__price {
+    flex-shrink: 0;
+  }
+
+  @media (min-width: $bp-desktop) {
+    &__inner {
+      padding: 4rem;
+    }
+
+    &__desc,
+    &__price {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,163 @@
+@use '../../styles/variables' as *;
+
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem $gutter;
+
+  // Mobil: logoet vises kun i den åbne menu (som i Figma)
+  &__logo {
+    position: relative;
+    z-index: 2;
+    visibility: hidden;
+
+    img {
+      width: 56px;
+      height: auto;
+    }
+  }
+
+  &.is-open &__logo {
+    visibility: visible;
+  }
+
+  &__toggle {
+    position: relative;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  // Tre streger lavet med ét element + before/after
+  &__burger,
+  &__burger::before,
+  &__burger::after {
+    position: absolute;
+    width: 22px;
+    height: 1.5px;
+    background: $color-gold-light;
+    transition: transform 0.25s, background 0.25s;
+  }
+
+  &__burger {
+    top: 21px;
+    left: 11px;
+
+    &::before,
+    &::after {
+      content: '';
+      left: 0;
+    }
+
+    &::before { top: -7px; }
+    &::after { top: 7px; }
+  }
+
+  &.is-open &__burger {
+    background: transparent;
+
+    &::before,
+    &::after {
+      background: $color-text;
+    }
+
+    &::before { transform: translateY(7px) rotate(45deg); }
+    &::after { transform: translateY(-7px) rotate(-45deg); }
+  }
+
+  &__nav {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: $color-light;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+    // Skillelinje under logo/luk-knap
+    &::before {
+      content: '';
+      position: absolute;
+      top: 68px;
+      inset-inline: 0;
+      border-top: 1px solid $color-border;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      padding: 0.4rem 1rem;
+      font-family: $font-heading;
+      font-size: 1.75rem;
+      color: $color-text;
+      text-decoration: none;
+
+      &.active,
+      &:hover {
+        color: $color-gold;
+      }
+    }
+  }
+
+  &.is-open &__nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (min-width: $bp-desktop) {
+    padding: 1.5rem 4rem;
+
+    &__logo {
+      visibility: visible;
+
+      img {
+        width: 80px;
+      }
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__nav {
+      position: static;
+      display: block;
+      background: none;
+      opacity: 1;
+      visibility: visible;
+
+      &::before {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        gap: 2.5rem;
+      }
+
+      a {
+        padding: 0.25rem 0;
+        font-family: $font-body;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: $color-light;
+      }
+    }
+  }
+}

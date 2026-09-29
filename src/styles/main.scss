@@ -9,13 +9,84 @@
 body {
   margin: 0;
   font-family: $font-body;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  background: $color-bg;
+  color: $color-text;
 }
 
 h1, h2, h3 {
   font-family: $font-heading;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+}
+
+a {
+  color: inherit;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
+}
+
+:focus-visible {
+  outline: 2px solid $color-gold;
+  outline-offset: 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: $color-gold;
+  color: #fff;
+  border: 1px solid $color-gold;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: $color-gold-dark;
+  }
+}
+
+// Arver tekstfarven, så den virker på både lys og mørk baggrund
+.btn--outline {
+  background: transparent;
+  color: inherit;
+  border-color: currentColor;
+
+  &:hover {
+    background: $color-gold;
+    border-color: $color-gold;
+    color: #fff;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-gold;
+}
+
+.error {
+  color: #a3341f;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }

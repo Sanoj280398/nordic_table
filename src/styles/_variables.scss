@@ -1,5 +1,17 @@
-// Farver: hentes fra Figma
+// Farver aflæst fra Figma-screenshot
+$color-bg: #f7f5f2;
+$color-surface: #ffffff;
+$color-text: #1f1f1f;
+$color-muted: #5f5a52;
+$color-border: #e5e1da;
+$color-gold: #8a6d3b;
+$color-gold-dark: #735a2f;
+$color-gold-light: #c9a96a; // guld på mørk baggrund (kontrast)
+$color-dark: #1f1f1f;
+$color-light: #f7f5f2;
+
 $font-heading: 'Cormorant Garamond', serif;
 $font-body: 'Inter', sans-serif;
 
+$gutter: 1.25rem;
 $bp-desktop: 1024px;
