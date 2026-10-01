@@ -1,3 +1,4 @@
+import { imageUrl } from '../../services/api.js'
 import './DishCard.scss'
 
 export const categoryLabels = {
@@ -6,12 +7,12 @@ export const categoryLabels = {
   dessert: 'Dessert',
 }
 
-// Genbruges på forsiden (signaturretter) og menu-siden
+// Kort til forsidens signaturretter
 export default function DishCard({ dish }) {
   return (
     <article className="dish-card">
       <div className="dish-card__media">
-        <img src={dish.image} alt={dish.title} loading="lazy" width="500" height="333" />
+        <img src={imageUrl(dish.image)} alt={dish.title} loading="lazy" width="500" height="333" />
         {dish.isSignature && <span className="dish-card__badge">Signatur</span>}
       </div>
       <div className="dish-card__body">

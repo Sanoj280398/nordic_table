@@ -13,7 +13,7 @@ export const formatHours = ({ open, close }) => (open === null ? 'Lukket' : `${o
 export const hoursForDay = (weekday) => openingHours.find((h) => h.weekdays.includes(weekday))
 
 export const contact = {
-  address: 'Nordgade 12, 8000 Aarhus',
+  address: 'Nordgade 12, 9000 Aalborg',
   phone: '+45 12 34 56 78',
   email: 'info@nordictable.dk',
 }

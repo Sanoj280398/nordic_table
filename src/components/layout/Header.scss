@@ -9,16 +9,27 @@
   align-items: center;
   padding: 0.75rem $gutter;
 
-  // Mobil: logoet vises kun i den åbne menu (som i Figma)
+  // Hvid bar i stedet for at ligge over et billede
+  &--solid {
+    position: relative;
+    background: $color-surface;
+    border-bottom: 1px solid $color-border;
+  }
+
   &__logo {
     position: relative;
     z-index: 2;
-    visibility: hidden;
 
     img {
-      width: 56px;
+      width: 64px;
       height: auto;
     }
+  }
+
+  // Mobil over billede: logoet vises kun i den åbne menu (som i Figma)
+  &--home &__logo,
+  &--hero &__logo {
+    visibility: hidden;
   }
 
   &.is-open &__logo {
@@ -45,6 +56,12 @@
     height: 1.5px;
     background: $color-gold-light;
     transition: transform 0.25s, background 0.25s;
+  }
+
+  &--solid &__burger,
+  &--solid &__burger::before,
+  &--solid &__burger::after {
+    background: $color-text;
   }
 
   &__burger {
@@ -120,14 +137,24 @@
   }
 
   @media (min-width: $bp-desktop) {
-    padding: 1.5rem 4rem;
+    padding: 1.75rem 4rem;
 
-    &__logo {
+    &--hero {
+      position: relative;
+      background: $color-surface;
+    }
+
+    &--home &__logo,
+    &--hero &__logo {
       visibility: visible;
+    }
 
-      img {
-        width: 80px;
-      }
+    &__logo img {
+      width: 96px;
+    }
+
+    &--home &__logo img {
+      width: 136px;
     }
 
     &__toggle {
@@ -147,16 +174,29 @@
 
       ul {
         display: flex;
-        gap: 2.5rem;
+        gap: 3.5rem;
       }
 
       a {
         padding: 0.25rem 0;
         font-family: $font-body;
-        font-size: 0.75rem;
-        letter-spacing: 0.15em;
+        font-size: 1rem;
         text-transform: uppercase;
-        color: $color-light;
+        color: $color-text;
+
+        &.active {
+          text-decoration: underline;
+          text-underline-offset: 6px;
+        }
+      }
+    }
+
+    &--home &__nav a {
+      color: $color-light;
+
+      &.active,
+      &:hover {
+        color: $color-gold-light;
       }
     }
   }

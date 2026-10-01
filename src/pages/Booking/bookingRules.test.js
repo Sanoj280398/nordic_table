@@ -1,4 +1,4 @@
-// Kør med: node --test src/pages/Booking/bookingRules.test.js
+// Kør med: npm test
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { slotsFor, validate } from './bookingRules.js'

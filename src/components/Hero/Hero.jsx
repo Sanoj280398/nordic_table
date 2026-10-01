@@ -1,13 +1,12 @@
 import './Hero.scss'
 
 // Genbruges som sidetoppen på alle sider (billede + overskrift).
-// imageDesktop er valgfri – uden den bruges samme billede på alle skærme.
-// small = lavere top til undersider.
-export default function Hero({ eyebrow, title, image, imageDesktop = image, small = false, children }) {
+// home = forsidens store hero, small = lavere top til undersider.
+export default function Hero({ eyebrow, title, image, home = false, small = false, children }) {
   return (
     <section
-      className={`hero ${small ? 'hero--small' : ''}`}
-      style={{ '--hero-img': `url(${image})`, '--hero-img-desktop': `url(${imageDesktop})` }}
+      className={`hero ${home ? 'hero--home' : ''} ${small ? 'hero--small' : ''}`}
+      style={{ backgroundImage: `url(${image})` }}
     >
       <div className="hero__content">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}

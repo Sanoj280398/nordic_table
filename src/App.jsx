@@ -16,16 +16,18 @@ export default function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/backoffice"
-          element={
-            <ProtectedRoute>
-              <Backoffice />
-            </ProtectedRoute>
-          }
-        />
         <Route path="*" element={<NotFound />} />
       </Route>
+
+      {/* Backoffice har sin egen header og ingen footer (jf. Figma) */}
+      <Route
+        path="/backoffice"
+        element={
+          <ProtectedRoute>
+            <Backoffice />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   )
 }

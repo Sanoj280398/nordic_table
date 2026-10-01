@@ -17,11 +17,11 @@ export default function SignatureDishes() {
   }, [])
 
   return (
-    <section className="home-section" aria-labelledby="signature-heading">
-      <p className="eyebrow">Signaturretter</p>
+    <section id="signaturretter" className="home-section" aria-labelledby="signature-heading">
+      <p className="eyebrow">Udvalgte retter</p>
       <h2 id="signature-heading">Vores signaturretter</h2>
       <p className="home-section__lead">
-        Tre retter, der fortæller vores historie – skabt af sæsonens bedste nordiske råvarer.
+        Hver af vores signaturretter er omhyggeligt sammensat af sæsonens bedste nordiske råvarer.
       </p>
 
       {loading && <p role="status">Henter retter…</p>}

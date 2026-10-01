@@ -1,23 +1,29 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
+import logoDark from '../../assets/images/logoBlack.png'
+import logoLight from '../../assets/images/logoWhite.png'
 import './Header.scss'
 
+// Er man allerede logget ind, sender /login videre til backoffice
 const links = [
   { to: '/', label: 'Forside' },
   { to: '/menu', label: 'Menu' },
-  { to: '/booking', label: 'Book bord' },
+  { to: '/booking', label: 'Bestil bord' },
   { to: '/login', label: 'Log ind' },
 ]
 
-export default function Header() {
+export default function Header({ variant = 'solid' }) {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
 
   return (
-    <header className={`header ${open ? 'is-open' : ''}`}>
+    <header className={`header header--${variant} ${open ? 'is-open' : ''}`}>
       <Link to="/" className="header__logo" onClick={close}>
-        <img src={logo} alt="Nordic Table – til forsiden" width="787" height="483" />
+        {/* Lyst logo kun når headeren ligger over et mørkt billede på desktop */}
+        <picture>
+          {variant === 'home' && <source media="(min-width: 1024px)" srcSet={logoLight} />}
+          <img src={logoDark} alt="Nordic Table – til forsiden" width="500" height="267" />
+        </picture>
       </Link>
 
       <button

@@ -1,11 +1,12 @@
 @use '../../styles/variables' as *;
 
 .hero {
+  position: relative;
   display: flex;
   align-items: flex-end;
   min-height: 520px;
   padding: 6rem $gutter 2.5rem;
-  background: $color-dark var(--hero-img) center / cover no-repeat;
+  background: $color-dark center / cover no-repeat;
   color: $color-light;
 
   &__content {
@@ -14,6 +15,19 @@
 
   .eyebrow {
     color: $color-gold-light;
+  }
+
+  // Forsidens eyebrow har en streg foran ("—— VELKOMST")
+  &--home .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &::before {
+      content: '';
+      width: 2.5rem;
+      border-top: 1px solid currentColor;
+    }
   }
 
   h1 {
@@ -32,6 +46,11 @@
     gap: 0.75rem;
   }
 
+  // Pil der scroller ned til næste sektion (kun desktop)
+  &__scroll {
+    display: none;
+  }
+
   &--small {
     min-height: 300px;
     padding-bottom: 2rem;
@@ -47,27 +66,52 @@
 
   @media (min-width: $bp-desktop) {
     align-items: center;
-    justify-content: center;
-    min-height: 100svh;
-
-    &--small {
-      min-height: 440px;
-      padding-top: 8rem;
-    }
-    padding-inline: 4rem;
-    background-image: var(--hero-img-desktop);
-    text-align: center;
+    min-height: min(100svh, 1210px);
+    padding: 8rem 5.5rem 4rem;
 
     &__content {
-      max-width: 44rem;
+      max-width: 34rem;
+    }
+
+    &--home .eyebrow::before {
+      width: 4rem;
     }
 
     p:not(.eyebrow) {
       font-size: 1.0625rem;
+      line-height: 2.1;
     }
 
     &__actions {
-      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    &__scroll {
+      display: block;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      translate: -50% 0;
+      padding: 0.5rem;
+      color: $color-light;
+    }
+
+    &--small {
+      min-height: 0;
+      padding: 6.5rem 3rem;
+
+      .hero__content {
+        max-width: 56rem;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      p:not(.eyebrow) {
+        max-width: 40rem;
+        line-height: 1.8;
+      }
     }
   }
 }

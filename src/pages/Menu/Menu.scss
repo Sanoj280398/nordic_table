@@ -6,7 +6,7 @@ $menu-line: #d9c59c;
   background: $color-surface;
 
   &__inner {
-    max-width: 900px;
+    max-width: 1300px;
     margin-inline: auto;
     padding: 1.5rem $gutter 3rem;
   }
@@ -62,7 +62,6 @@ $menu-line: #d9c59c;
     margin: 0;
     font-family: $font-heading;
     font-size: 0.8125rem;
-    color: $color-muted;
   }
 
   &__price {
@@ -71,12 +70,38 @@ $menu-line: #d9c59c;
 
   @media (min-width: $bp-desktop) {
     &__inner {
-      padding: 4rem;
+      padding: 5rem 6rem;
+    }
+
+    &__category + &__category {
+      margin-top: 5rem;
+    }
+
+    &__heading {
+      gap: 3rem;
+      padding: 0 0 2.5rem 0.5rem;
+
+      img {
+        width: 135px;
+        aspect-ratio: 3 / 2;
+      }
+
+      h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    &__item {
+      padding: 2.5rem 0 0.75rem;
+
+      h3 {
+        font-size: 2.25rem;
+      }
     }
 
     &__desc,
     &__price {
-      font-size: 1rem;
+      font-size: 1.375rem;
     }
   }
 }

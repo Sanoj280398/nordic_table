@@ -36,6 +36,11 @@ const icons = {
       d="M6 3v5a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3M8 3v18M17 21V3c-2 1.5-3 4-3 7v3h3"
     />
   ),
+  arrowLeft: <path d="M19 12H5m6-6-6 6 6 6" />,
+  chevronDown: <path d="m6 9 6 6 6-6" />,
+  plus: <path d="M12 5v14M5 12h14" />,
+  trash: <path d="M4 7h16M9 7V4h6v3m-9 0 1 13h10l1-13M10 11v6m4-6v6" />,
+  edit: <path d="M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4" />,
   clock: (
     <>
       <circle cx="12" cy="12" r="9" />

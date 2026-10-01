@@ -31,10 +31,10 @@ $field-border: #d9c59c;
   }
 
   @media (min-width: $bp-desktop) {
-    grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: start;
-    padding: 5rem 4rem;
+    padding: 4.5rem 7rem 6rem;
   }
 }
 
@@ -83,6 +83,7 @@ $field-border: #d9c59c;
 .booking-form {
   padding: 1.5rem 1.25rem;
   background: $color-surface;
+  border: 1px solid $field-border;
   border-radius: 10px;
   box-shadow: 0 4px 24px rgba($color-dark, 0.08);
 
@@ -195,6 +196,16 @@ $field-border: #d9c59c;
   }
 
   @media (min-width: $bp-desktop) {
-    padding: 2.5rem;
+    padding: 3rem 3.25rem;
+
+    h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input,
+    select {
+      font-size: 1rem;
+    }
   }
 }

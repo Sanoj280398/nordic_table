@@ -18,6 +18,7 @@ body {
 h1, h2, h3 {
   font-family: $font-heading;
   font-weight: 500;
+  letter-spacing: 0.03em;
   line-height: 1.1;
   margin: 0 0 0.5em;
 }
@@ -54,6 +55,13 @@ img {
   &:hover {
     background: $color-gold-dark;
   }
+
+  @media (min-width: $bp-desktop) {
+    padding: 1.1rem 3rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
 }
 
 // Arver tekstfarven, så den virker på både lys og mørk baggrund
@@ -76,6 +84,10 @@ img {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: $color-gold;
+
+  @media (min-width: $bp-desktop) {
+    font-size: 1rem;
+  }
 }
 
 .error {

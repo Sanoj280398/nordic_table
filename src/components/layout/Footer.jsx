@@ -11,13 +11,13 @@ export default function Footer() {
         <section>
           <img src={logo} alt="Nordic Table" width="778" height="371" loading="lazy" />
           <p className="footer__about">
-            Nordisk køkken med fokus på sæsonens råvarer, ærlighed og hygge. Velkommen til bords.
+            Nordisk køkken med fokus på sæsonens råvarer, enkelhed og hygge. Velkommen til bordet.
           </p>
           <ul className="footer__socials">
             {socials.map(({ name, url }) => (
               <li key={name}>
                 <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
-                  <Icon name={name} size={40} />
+                  <Icon name={name} size={36} />
                 </a>
               </li>
             ))}
@@ -60,7 +60,10 @@ export default function Footer() {
         </section>
       </div>
 
-      <p className="footer__copy">&copy; {new Date().getFullYear()} Nordic Table. Alle rettigheder forbeholdes.</p>
+      <div className="footer__bottom">
+        <p>&copy; {new Date().getFullYear()} Nordic Table. Alle rettigheder forbeholdes</p>
+        <p>Designet og udviklet med omhu</p>
+      </div>
     </footer>
   )
 }

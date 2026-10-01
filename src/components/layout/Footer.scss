@@ -98,24 +98,52 @@
     }
   }
 
-  &__copy {
-    max-width: none;
-    margin: 2.5rem 0 0;
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 2.5rem;
     padding-top: 1.25rem;
-    border-top: 1px solid rgba($color-light, 0.12);
+    border-top: 1px solid rgba($color-light, 0.15);
     text-align: center;
     font-size: 0.6875rem;
-    letter-spacing: 0.05em;
+    color: rgba($color-light, 0.4);
+
+    p {
+      margin: 0;
+    }
   }
 
   @media (min-width: $bp-desktop) {
     padding: 4rem 4rem 1.5rem;
 
     &__grid {
-      grid-template-columns: 1.5fr repeat(3, 1fr);
+      grid-template-columns: 1.4fr 1fr 0.8fr 1.1fr;
       gap: 3rem;
       max-width: 1440px;
       margin-inline: auto;
+      padding-top: 3.5rem;
+    }
+
+    &__grid > :not(:first-child) {
+      padding-top: 2.5rem;
+    }
+
+    &__hours {
+      max-width: 15rem;
+    }
+
+    &__socials svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    &__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 1440px;
+      margin: 4rem auto 0;
+      font-size: 0.8125rem;
     }
   }
 }
