@@ -21,8 +21,6 @@ Dato: 02-10-2026  Underskrift: [UDFYLD: indsæt underskrift]
 **Hvad gik godt?**
 Kernekravene i prioriteringslisten (punkt 1–7) er løst: alle fem sider er bygget mobile-first efter Figma, menuen og signaturretterne hentes fra API'et, bordreservation sender til API'et med validering og kvittering, og backoffice har fuld CRUD på retter. Jeg er især tilfreds med, at al API-kommunikation går gennem én lille funktion (`src/services/api.js`), så fejlhåndtering kun er skrevet ét sted, og at reglerne for booking og retter ligger i rene funktioner, der kan testes uden browser.
 
-[UDFYLD: tilføj 1–2 sætninger med dine egne ord om, hvad du selv synes gik bedst.]
-
 **Hvad var udfordrende – og hvordan løste jeg det?**
 
 - **API'et svarer ikke altid med en HTTP-fejlkode.** Ved forkert login og ugyldigt token svarer det `200 OK` med `status: "error"` i body. Derfor tjekker `api()` både `res.ok` og `data.status`, så alle fejl ender som en `Error`, komponenterne kan vise.
@@ -56,8 +54,6 @@ Projektet blev brudt ned efter opgavens prioriteringsliste. Kolonnen "Udført" e
 | 7 | Backoffice: oversigt, opret, redigér, slet retter | [UDFYLD] | [UDFYLD] | 1/10 |
 | 8 | 404-side, tomme lister, fejlbeskeder, finpudsning af design | [UDFYLD] | [UDFYLD] | 1/10 |
 | 9 | Rapport | [UDFYLD] | [UDFYLD] | [UDFYLD] |
-
-[UDFYLD: 2–3 sætninger om, hvor estimaterne holdt, og hvor de skred – og vedlæg evt. screenshot af Trello/GitHub Projects som bilag.]
 
 ## 3. Tech stack
 
@@ -137,8 +133,6 @@ Ikke løst: 2 (filtrering af menu), 3 (administrer brugere), 4 (bordbestillinger
 - **Rapport:** et udkast til denne rapport er lavet med samme værktøj ud fra koden og git-historikken. Jeg har selv udfyldt og rettet den til.
 
 Resten af løsningen har jeg skrevet selv.
-
-[UDFYLD: 2–3 sætninger om, hvordan du har gennemgået og tilpasset den AI-hjulpne kode, så du kan forklare den ved den mundtlige prøve.]
 
 ## 7. Testoplysninger
 
